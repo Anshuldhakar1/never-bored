@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- PLACEHOLDER favicon — matches components/brand/Logo.jsx. Replace with the real mark. -->
+  <rect x="1.5" y="1.5" width="29" height="29" rx="7" fill="#E8A33D"/>
+  <rect x="7" y="9" width="18" height="14" rx="2" fill="none" stroke="#1B1400" stroke-width="2.2"/>
+  <path d="M11.5 20 L15 14.5 L17.5 17.5 L20.5 12.5" fill="none" stroke="#1B1400" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

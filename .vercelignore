@@ -1,0 +1,9 @@
+# Keep local-only files out of a `vercel` CLI upload. (Vercel builds its own
+# node_modules and .next from package.json.)
+node_modules
+.next
+.data
+.env
+.env.*
+!.env.example
+*.log

@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+.env
+.env.*
+!.env.example
+# Shared boards, review notes and rendered images stored by the local server.
+.data/
+*.log
+
+.vercel

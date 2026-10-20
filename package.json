@@ -1,0 +1,26 @@
+{
+  "name": "never-bored",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A storyboarding workspace: board a whole screenplay, stick-figure sketches and AI line art as editable vector, rendered images, team review, camera moves, and PDF or SVG export.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "engines": {
+    "node": ">=20.9"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
+    "@google/genai": "^2.30.0",
+    "@netlify/blobs": "^11.1.4",
+    "@upstash/redis": "^1.39.0",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^1.59.0",
+    "next": "^16.4.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
