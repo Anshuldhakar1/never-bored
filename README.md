@@ -158,6 +158,44 @@ shared-board seat — exactly as it was.
 
 ## Deploying
 
+### One command: `npm run deploy`
+
+This project is linked to the Vercel project `never-bored` and the GitHub repo, with
+automatic deploys **off** (`vercel.json`), so pushing never deploys on its own. To ship:
+
+```bash
+npm run deploy -- -m "what changed"   # commit everything, push to GitHub, deploy to production
+npm run deploy                        # deploy what's already committed
+npm run deploy -- --dry-run           # show what would happen, change nothing
+```
+
+It checks first (Vercel login, project link, branch `main`), pulls anything new from
+GitHub (a teammate's merged work), pushes so production always matches GitHub, deploys
+with `vercel deploy --prod`, then checks the live site responds. It stops with the fix
+at the first problem — including when both your copy and GitHub have new commits.
+
+### Working with another developer
+
+Contributors follow [CONTRIBUTING.md](CONTRIBUTING.md): clone, branch, open a pull
+request. Adding them as a GitHub collaborator is free (*repo → Settings →
+Collaborators*).
+
+The repo is **public**, so on Vercel's free plan anyone's commits can be deployed
+("collaboration is free for public repositories"). Deploys stay manual:
+
+- **You** (logged in to Vercel): `npm run deploy` — uses the Vercel CLI.
+- **Your teammate** (no Vercel account needed): `npm run deploy -- --hook` — triggers the
+  project's deploy hook `teammate-deploy`, which builds GitHub's `main`. The hook URL is in
+  your `.env.local` (`DEPLOY_HOOK_URL=…`); send it to them **privately**. Anyone with the
+  URL can deploy, so if it leaks: Vercel → never-bored → *Settings → Git → Deploy Hooks*,
+  delete it, create a new one, and share the new URL.
+
+`npm run deploy` checks the repo's visibility: if you ever make it private again, it
+stops before deploying a teammate's commit (a private repo on the free plan only deploys
+the owner's commits) and explains the options — Vercel Pro ($20 per developer / month)
+or merging with "Create a merge commit". Never share your Vercel login or token: it
+controls your whole account.
+
 ### Vercel — free (Hobby plan)
 
 The app is ready for Vercel as-is: no `vercel.json` needed, functions fit the Hobby
